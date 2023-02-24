@@ -8,7 +8,8 @@ RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.d
 RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 
 #install python dependencies
-COPY requirements.txt requirements.txt 
+COPY requirements.txt requirements.txt
+RUN pip install chromedriver-binary
 RUN pip install -r ./requirements.txt 
 
 #some envs
